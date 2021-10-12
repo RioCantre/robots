@@ -11,3 +11,12 @@ h1 {
     font-family: '2Tech';
     color: #253241;
 }
+
+button {
+    padding: 15px;
+    width: 215px;
+    border: none;
+    background-color: #253241;
+    color: white;
+    cursor: pointer;
+}
