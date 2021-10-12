@@ -1,14 +1,27 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 import CardList from '../components/cardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll'
 import ErrorBoundary  from '../components/ErrorBoundary';
 import './App.css';
+import { setSearchField } from '../actions'
+
+const mapStateToProps = state => {
+  return {
+    searchField: state.searchRobots.searchField
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onSearchChange: (event) => dispatch(setSearchField(event.target.value))
+  }
+}
 
 function App(){
   const [robots, setRobots] = useState([])
   const [searchfield, setSearchfield] = useState('')
-  const [count, setCount] = useState(0)
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
@@ -30,7 +43,6 @@ function App(){
       (
         <div className='tc'>
           <h1 className='f1'> RoboFriends </h1>
-          <button onClick={() => setCount(count)}>Click Me!</button>
           <SearchBox searchChange={onSearchChange} />
           <Scroll>
             <ErrorBoundary ErrorBoundary>
@@ -41,4 +53,4 @@ function App(){
       );
 }
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
