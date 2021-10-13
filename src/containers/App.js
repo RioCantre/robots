@@ -1,43 +1,53 @@
-import React, { useState, useEffect } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CardList from '../components/cardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll'
 import ErrorBoundary  from '../components/ErrorBoundary';
+import { requestRobots, setSearchField } from '../actions'
 import './App.css';
-import { setSearchField } from '../actions'
 
 const mapStateToProps = state => {
   return {
-    searchField: state.searchRobots.searchField
+    searchField: state.searchRobots.searchField,
+    robots: state.requestRobots.robots,
+    isPending: state.requestRobots.isPending,
+    error: state.requestRobots.error
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onSearchChange: (event) => dispatch(setSearchField(event.target.value))
+    onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
+    onRequestRobots: () => requestRobots(dispatch)
   }
 }
 
-function App(){
-  const [robots, setRobots] = useState([])
-  const [searchfield, setSearchfield] = useState('')
+class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      robots: []
+    }
+  }
 
-  useEffect(() => {
+  componentDidMount() {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => response.json())
-      .then(users => { setRobots(users) });
-  },[])
+      .then(users => { this.setState({ robots: users })});
+  }
 
-  const onSearchChange = (event) => {
-    setSearchfield(event.target.value);
-  };
 
-  const filterRobots = robots.filter(robots => {
-    return robots.name
-      .toLowerCase()
-      .includes(searchfield.toLowerCase());
-  });
+  render() {
+    const { robots } = this.state;
+    const { searchField, onSearchChange} = this.props;
+    const filterRobots = robots.filter(robots => {
+      return robots.name
+        .toLowerCase()
+        .includes(searchField.toLowerCase());
+
+  
+    })
     return !robots.length ?
       <h1 className='tc'> Loading...</h1> :
       (
@@ -51,6 +61,7 @@ function App(){
           </Scroll>
         </div>
       );
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
