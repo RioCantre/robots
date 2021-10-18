@@ -1,13 +1,29 @@
-# Robots
+# Robofriends
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+This project This project aims to allow the users to search and show the possible search input of the available card. It uses backend technologies that reveal status and information.
 
 
-Clone the project and then you can run:
+## Demo
+![Robofriends](robofriends.gif)
 
-`1. npm install`
+## Tech
+- React
+- Redux
+- Tachyons
 
-`2. npm start`
+## Install locally
+```
+// In the terminal, run the following commands
+
+npm install
+npm start
+```
+
+## Credits
+- [Robohash](https://robohash.org/)
+
+
 
 
 
