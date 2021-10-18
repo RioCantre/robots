@@ -1,7 +1,7 @@
 # Robofriends
 
 ## Overview
-This project This project aims to allow the users to search and show the possible search input of the available card. It uses backend technologies that reveal status and information.
+This project aims to allow the users to search and show the possible search input of the available card. It uses backend technologies that reveal status and information.
 
 
 ## Demo
