@@ -1,7 +1,7 @@
 # Robofriends
 
 ## Overview
-This project aims to allow the users to search and show the possible search input of the available card. It uses backend technologies that reveal status and information.
+This project aims to allow the users to search and show the possible search input of the available card. It uses state management that reveal changes on status and other information.
 
 
 ## Demo
@@ -18,6 +18,7 @@ This project aims to allow the users to search and show the possible search inpu
 
 npm install
 npm start
+
 ```
 
 ## Credits
