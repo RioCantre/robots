@@ -3,14 +3,13 @@
 ## Overview
 This project aims to allow the users to search and show the possible search input of the available card. It uses state management that reveal changes on status and other information.
 
-
-## Demo
-![Robofriends](robofriends.gif)
-
 ## Technology used
 - React
 - Redux
 - Tachyons
+
+## Demo
+![Robofriends](robofriends.gif)
 
 ## Install locally
 ```
@@ -26,7 +25,7 @@ npm start
 
 <hr>
 
-### ✨ [Portfolio Preview](https://riocantre.netlify.app/) 
+### ✨ [Portfolio Preview](https://github.com/RioCantre/rioc-portfolio/blob/main/README.md) 
 
 
 
