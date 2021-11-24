@@ -7,7 +7,7 @@ This project aims to allow the users to search and show the possible search inpu
 ## Demo
 ![Robofriends](robofriends.gif)
 
-## Tech
+## Technology used
 - React
 - Redux
 - Tachyons
@@ -23,6 +23,10 @@ npm start
 
 ## Credits
 - [Robohash](https://robohash.org/)
+
+<hr>
+
+### ✨ [Portfolio Preview](https://riocantre.netlify.app/) 
 
 
 
